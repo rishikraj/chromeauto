@@ -2,8 +2,8 @@ const puppeteer = require('puppeteer');
 var request = require("request");
 var readline = require('readline-sync');
 const BrowserTimeOut=300000; 
-//var username = readline.question("Please enter your irctc account USERNAME\n");
-//      var password = readline.question("Please enter your PASSWORD to login\n");
+     var username = readline.question("Please enter your irctc account USERNAME\n");
+     var password = readline.question("Please enter your PASSWORD to login\n");
       var j_from ="jhs"; //readline.question("Enter the Origin(From) Station name or Code\n").toUpperCase();
       var j_to ="nzm" //readline.question("Enter the Destination Name or Code!\n").toUpperCase();
       var j_date ="19-06-2018"//readline.question("Enter the date of journey in 'DD-MM-YYYY' format!\n");
@@ -37,8 +37,8 @@ async function generatetab() {
         if (error) throw new Error(error);
         var json = await JSON.parse(body);
         var captcha = await json.ParsedResults[0].ParsedText.replace(/(\r\n\t|\n|\r\t)/gm,"").trim().replace(/ +/g, "");
-        await page.type('#userId', "rishikraj1")
-        await page.type('#pwd', "Up958611", {delay:10})
+        await page.type('#userId', username)
+        await page.type('#pwd', password, {delay:10})
         await page.type('#captcha', "")
         await page.click('#login_header_disable > div > div.ui-dialog-content.ui-widget-content > app-login > div.irmodal > div > div > div.modal-content > div.modal-body > form > button')
         
