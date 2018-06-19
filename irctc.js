@@ -4,8 +4,8 @@ var readline = require('readline-sync');
 const BrowserTimeOut=300000; 
      var username = readline.question("Please enter your irctc account USERNAME\n");
      var password = readline.question("Please enter your PASSWORD to login\n");
-      var j_from ="jhs"; //readline.question("Enter the Origin(From) Station name or Code\n").toUpperCase();
-      var j_to ="nzm" //readline.question("Enter the Destination Name or Code!\n").toUpperCase();
+      var j_from =readline.question("Enter the Origin(From) Station name or Code\n").toUpperCase();
+      var j_to =readline.question("Enter the Destination Name or Code!\n").toUpperCase();
       var j_date ="19-06-2018"//readline.question("Enter the date of journey in 'DD-MM-YYYY' format!\n");
       const quota =1; //readline.question("Press '1' for Tatkaal else enter '0'\n");
 
